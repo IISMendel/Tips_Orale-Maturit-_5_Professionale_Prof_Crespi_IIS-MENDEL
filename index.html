@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speak with Confidence — Maturità Speaking 5ªPA | IIS Mendel</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:    #0d1b2a;
+  --navy2:   #112238;
+  --navy3:   #16304f;
+  --gold:    #c9a84c;
+  --gold-lt: #e8c97a;
+  --gold-dk: #9a7a30;
+  --cream:   #f5f0e8;
+  --white:   #ffffff;
+  --muted:   rgba(245,240,232,0.55);
+  --dim:     rgba(245,240,232,0.3);
+
+  /* topic colors */
+  --wine:    #8b2252;
+  --wine-lt: #c4507e;
+  --farm:    #3a6b35;
+  --farm-lt: #5ea355;
+  --gmo:     #1a5276;
+  --gmo-lt:  #2e86c1;
+  --aw:      #6e4a1e;
+  --aw-lt:   #c07028;
+  --sus:     #1a4a3a;
+  --sus-lt:  #27a87a;
+  --gen:     #3d2b6e;
+  --gen-lt:  #7c5cbf;
+  --cheese:  #2a5c6e;
+  --cheese-lt:#4db8d4;
+  --cap:      #4a2060;
+  --cap-lt:   #9b59b6;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--navy);
+  color: var(--cream);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── PROGRESS BAR ── */
+#prog {
+  position: fixed; top:0; left:0; height:3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-lt));
+  z-index:9999; width:0%; transition: width .1s;
+}
+
+/* ── TOPBAR ── */
+.topbar {
+  position: fixed; top:0; left:0; right:0; z-index:900;
+  background: rgba(13,27,42,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  display: flex; align-items:center; justify-content:space-between;
+  padding: 0 2rem; height:56px;
+}
+.topbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: .95rem; font-weight:700;
+  color: var(--gold);
+  letter-spacing:.02em;
+}
+.topbar-meta {
+  font-size: .75rem; color: var(--muted);
+  letter-spacing:.06em; text-transform:uppercase;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  text-align:center;
+  padding: 100px 2rem 5rem;
+  position: relative;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(201,168,76,.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 70%, rgba(139,34,82,.10) 0%, transparent 50%),
+    var(--navy);
+  overflow: hidden;
+}
+.hero::after {
+  content:'';
+  position:absolute; inset:0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.035'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events:none; z-index:0;
+}
+.hero > * { position:relative; z-index:1; }
+
+.hero-kicker {
+  display:inline-block;
+  border: 1px solid var(--gold-dk);
+  color: var(--gold);
+  font-size:.75rem; font-weight:600;
+  letter-spacing:.18em; text-transform:uppercase;
+  padding: 6px 20px; border-radius:30px;
+  margin-bottom:2rem;
+  animation: fadeUp .7s ease both;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 7vw, 6.5rem);
+  font-weight:900; line-height:1.05;
+  color: var(--cream);
+  margin-bottom:.8rem;
+  animation: fadeUp .8s .1s ease both;
+}
+.hero h1 em {
+  font-style:italic; color: var(--gold);
+}
+.hero-sub {
+  font-size:clamp(.95rem, 1.8vw, 1.2rem);
+  color: var(--muted); max-width:620px;
+  line-height:1.75; margin-bottom:2.5rem;
+  animation: fadeUp .9s .2s ease both;
+}
+.hero-stats {
+  display:flex; gap:3rem; justify-content:center; flex-wrap:wrap;
+  animation: fadeUp 1s .3s ease both;
+  margin-bottom:3rem;
+}
+.stat { text-align:center; }
+.stat-num {
+  font-family:'Playfair Display',serif;
+  font-size:2.8rem; font-weight:900; color:var(--gold); line-height:1;
+}
+.stat-label {
+  font-size:.75rem; color:var(--muted); letter-spacing:.1em;
+  text-transform:uppercase; margin-top:4px;
+}
+.hero-topics {
+  display:flex; flex-wrap:wrap; gap:10px; justify-content:center;
+  animation: fadeUp 1.1s .4s ease both;
+}
+.topic-chip {
+  padding: 7px 18px; border-radius:30px;
+  font-size:.8rem; font-weight:600; cursor:pointer;
+  border: 1.5px solid; transition: all .25s;
+  letter-spacing:.04em;
+}
+.chip-wine  { border-color:var(--wine-lt); color:var(--wine-lt); }
+.chip-farm  { border-color:var(--farm-lt); color:var(--farm-lt); }
+.chip-gmo   { border-color:var(--gmo-lt);  color:var(--gmo-lt);  }
+.chip-aw    { border-color:var(--aw-lt);   color:var(--aw-lt);   }
+.chip-sus   { border-color:var(--sus-lt);  color:var(--sus-lt);  }
+.chip-gen   { border-color:var(--gen-lt);  color:var(--gen-lt);  }
+.chip-cheese{ border-color:var(--cheese-lt); color:var(--cheese-lt); }
+.chip-cap   { border-color:var(--cap-lt);    color:var(--cap-lt);    }
+.topic-chip:hover { color:#fff; }
+.chip-wine:hover  { background:var(--wine); border-color:var(--wine); }
+.chip-farm:hover  { background:var(--farm); border-color:var(--farm); }
+.chip-gmo:hover   { background:var(--gmo);  border-color:var(--gmo);  }
+.chip-aw:hover    { background:var(--aw);   border-color:var(--aw);   }
+.chip-sus:hover   { background:var(--sus);  border-color:var(--sus);  }
+.chip-gen:hover   { background:var(--gen);  border-color:var(--gen);  }
+.chip-cheese:hover{ background:var(--cheese);border-color:var(--cheese); }
+.chip-cap:hover   { background:var(--cap);   border-color:var(--cap);    }
+
+.scroll-cue {
+  position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%);
+  color:var(--dim); font-size:.75rem; letter-spacing:.12em; text-transform:uppercase;
+  animation: bounce 2.2s infinite;
+}
+
+/* ── STICKY FILTER BAR ── */
+.filterbar {
+  position: sticky; top:56px; z-index:800;
+  background: var(--navy2);
+  border-bottom: 1px solid rgba(201,168,76,.15);
+  padding: .7rem 2rem;
+  display: flex; align-items:center; gap:.6rem;
+  flex-wrap:wrap; overflow-x:auto;
+}
+.filterbar-label {
+  font-size:.7rem; font-weight:600; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--gold-dk); white-space:nowrap;
+  margin-right:.4rem;
+}
+.fbtn {
+  padding: 6px 16px; border-radius:20px;
+  border: 1.5px solid rgba(255,255,255,.12);
+  background:transparent; color:var(--muted);
+  font-family:'DM Sans',sans-serif; font-size:.78rem; font-weight:600;
+  cursor:pointer; transition:all .2s; white-space:nowrap;
+}
+.fbtn:hover { border-color:var(--gold-dk); color:var(--cream); }
+.fbtn.on { color:#000; border-color:transparent; }
+.fbtn.on[data-f="all"] { background:var(--gold); }
+.fbtn.on[data-f="wine"] { background:var(--wine-lt); }
+.fbtn.on[data-f="farm"] { background:var(--farm-lt); }
+.fbtn.on[data-f="gmo"]  { background:var(--gmo-lt); color:#fff; }
+.fbtn.on[data-f="aw"]   { background:var(--aw-lt); }
+.fbtn.on[data-f="sus"]  { background:var(--sus-lt); color:#fff; }
+.fbtn.on[data-f="gen"]  { background:var(--gen-lt); color:#fff; }
+.fbtn.on[data-f="cheese"]{ background:var(--cheese-lt); color:#fff; }
+.fbtn.on[data-f="cap"]   { background:var(--cap-lt);    color:#fff; }
+
+.search-wrap { margin-left:auto; }
+.search-inp {
+  background: rgba(255,255,255,.07);
+  border: 1.5px solid rgba(255,255,255,.12);
+  border-radius:20px; padding:6px 16px;
+  color:var(--cream); font-family:'DM Sans',sans-serif; font-size:.82rem;
+  outline:none; width:180px; transition:border-color .2s;
+}
+.search-inp::placeholder { color:var(--dim); }
+.search-inp:focus { border-color:var(--gold-dk); }
+
+/* ── PHRASES SECTION ── */
+.phrases-section {
+  max-width:1280px; margin:0 auto; padding:4rem 2rem 2rem;
+}
+.phrases-section h2 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.6rem,3vw,2.4rem); font-weight:700;
+  color:var(--cream); margin-bottom:.4rem;
+}
+.phrases-section h2 em { font-style:italic; }
+.section-desc {
+  font-size:.92rem; color:var(--muted); margin-bottom:2rem; max-width:700px; line-height:1.65;
+}
+.section-divider {
+  height:1px; background:linear-gradient(90deg, var(--gold-dk), transparent);
+  margin:3.5rem 0; opacity:.4;
+}
+
+/* TOPIC GROUP HEADER */
+.topic-group { margin-bottom:2.5rem; }
+.tg-header {
+  display:flex; align-items:center; gap:1rem;
+  margin-bottom:1.5rem; padding-bottom:.8rem;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.tg-dot {
+  width:12px; height:12px; border-radius:3px; flex-shrink:0;
+}
+.tg-label {
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem; font-weight:700; color:var(--cream); letter-spacing:.02em;
+}
+.tg-count {
+  margin-left:auto;
+  font-size:.72rem; color:var(--dim); font-weight:600;
+  letter-spacing:.1em; text-transform:uppercase;
+}
+
+/* PHRASE CARD */
+.cards-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px,1fr));
+  gap:1rem;
+}
+.pcard {
+  background: var(--navy2);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius:14px; padding:1.2rem 1.3rem 1rem;
+  position:relative; overflow:hidden;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+  cursor:default;
+}
+.pcard::before {
+  content:''; position:absolute; left:0; top:0; bottom:0;
+  width:4px; border-radius:4px 0 0 4px;
+}
+.pcard[data-t="wine"]::before { background:var(--wine-lt); }
+.pcard[data-t="farm"]::before { background:var(--farm-lt); }
+.pcard[data-t="gmo"]::before  { background:var(--gmo-lt); }
+.pcard[data-t="aw"]::before   { background:var(--aw-lt); }
+.pcard[data-t="sus"]::before  { background:var(--sus-lt); }
+.pcard[data-t="gen"]::before  { background:var(--gen-lt); }
+.pcard[data-t="cheese"]::before { background:var(--cheese-lt); }
+.pcard[data-t="cap"]::before    { background:var(--cap-lt);    }
+
+.pcard:hover {
+  transform:translateY(-3px);
+  box-shadow:0 12px 32px rgba(0,0,0,.35);
+  border-color:rgba(255,255,255,.14);
+}
+.pcard-top { display:flex; align-items:flex-start; gap:.8rem; margin-bottom:.6rem; }
+.pcard-num {
+  font-family:'Playfair Display',serif;
+  font-size:1.5rem; font-weight:900; line-height:1; flex-shrink:0;
+  opacity:.25; margin-top:2px;
+}
+.pcard-en {
+  font-size:.97rem; font-weight:500; color:var(--cream); line-height:1.5;
+}
+.pcard-en mark {
+  background:transparent; font-weight:700; font-style:italic;
+}
+.pcard[data-t="wine"] .pcard-en mark  { color:var(--wine-lt); }
+.pcard[data-t="farm"] .pcard-en mark  { color:var(--farm-lt); }
+.pcard[data-t="gmo"]  .pcard-en mark  { color:var(--gmo-lt); }
+.pcard[data-t="aw"]   .pcard-en mark  { color:var(--aw-lt); }
+.pcard[data-t="sus"]  .pcard-en mark  { color:var(--sus-lt); }
+.pcard[data-t="gen"]  .pcard-en mark  { color:var(--gen-lt); }
+.pcard[data-t="cheese"] .pcard-en mark { color:var(--cheese-lt); }
+.pcard[data-t="cap"]    .pcard-en mark { color:var(--cap-lt);    }
+
+.pcard-it {
+  font-size:.82rem; color:var(--dim); font-style:italic;
+  line-height:1.55; margin-bottom:.7rem;
+  padding-left: 2.3rem;
+}
+.pcard-footer { display:flex; align-items:center; gap:.6rem; padding-left:2.3rem; }
+.pcard-tag {
+  font-size:.67rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  padding:2px 9px; border-radius:10px;
+}
+.pcard[data-t="wine"] .pcard-tag  { background:rgba(196,80,126,.18); color:var(--wine-lt); }
+.pcard[data-t="farm"] .pcard-tag  { background:rgba(94,163,85,.18);  color:var(--farm-lt); }
+.pcard[data-t="gmo"]  .pcard-tag  { background:rgba(46,134,193,.18); color:var(--gmo-lt); }
+.pcard[data-t="aw"]   .pcard-tag  { background:rgba(192,112,40,.18); color:var(--aw-lt); }
+.pcard[data-t="sus"]  .pcard-tag  { background:rgba(39,168,122,.18); color:var(--sus-lt); }
+.pcard[data-t="gen"]  .pcard-tag  { background:rgba(124,92,191,.18); color:var(--gen-lt); }
+.pcard[data-t="cheese"] .pcard-tag { background:rgba(77,184,212,.18); color:var(--cheese-lt); }
+.pcard[data-t="cap"]    .pcard-tag { background:rgba(155,89,182,.18);  color:var(--cap-lt);    }
+
+.copy-btn {
+  margin-left:auto; background:transparent;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius:8px; padding:3px 10px;
+  color:var(--dim); font-size:.7rem; font-family:'DM Sans',sans-serif;
+  cursor:pointer; transition:all .2s;
+}
+.copy-btn:hover { border-color:var(--gold-dk); color:var(--gold); }
+.copy-btn.copied { border-color:var(--sus-lt); color:var(--sus-lt); }
+
+.pcard-hidden { display:none !important; }
+
+/* ── LINKERS SECTION ── */
+.linkers-section {
+  background: var(--navy3);
+  padding: 5rem 2rem;
+  border-top: 1px solid rgba(201,168,76,.15);
+  border-bottom: 1px solid rgba(201,168,76,.15);
+}
+.linkers-inner { max-width:1280px; margin:0 auto; }
+.linkers-inner h2 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:900;
+  color:var(--cream); margin-bottom:.5rem;
+}
+.linkers-inner h2 em { font-style:italic; color:var(--gold); }
+.linkers-inner .section-desc { margin-bottom:2.5rem; }
+
+.linker-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+  gap:1.2rem;
+}
+.linker-group {
+  background: var(--navy2);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:14px; overflow:hidden;
+}
+.lg-head {
+  display:flex; align-items:center; gap:.7rem;
+  padding:.85rem 1.2rem;
+}
+.lg-icon { font-size:1.2rem; }
+.lg-title {
+  font-family:'Playfair Display',serif;
+  font-size:.95rem; font-weight:700; color:var(--cream);
+}
+.lg-body { padding:.2rem 1.2rem 1.2rem; }
+.linker-item {
+  display:flex; align-items:baseline; gap:.7rem;
+  padding:.45rem 0;
+  border-bottom:1px solid rgba(255,255,255,.04);
+}
+.linker-item:last-child { border-bottom:none; }
+.linker-word {
+  font-weight:700; font-size:.88rem; min-width:130px; flex-shrink:0;
+}
+.linker-example {
+  font-size:.78rem; color:var(--dim); line-height:1.45; font-style:italic;
+}
+
+/* group accent */
+.lg-add   .lg-head { background:rgba(39,168,122,.15); }
+.lg-add   .lg-title { color:var(--sus-lt); }
+.lg-add   .linker-word { color:var(--sus-lt); }
+.lg-contr .lg-head { background:rgba(46,134,193,.15); }
+.lg-contr .lg-title { color:var(--gmo-lt); }
+.lg-contr .linker-word { color:var(--gmo-lt); }
+.lg-cause .lg-head { background:rgba(192,112,40,.15); }
+.lg-cause .lg-title { color:var(--aw-lt); }
+.lg-cause .linker-word { color:var(--aw-lt); }
+.lg-seq   .lg-head { background:rgba(201,168,76,.15); }
+.lg-seq   .lg-title { color:var(--gold-lt); }
+.lg-seq   .linker-word { color:var(--gold-lt); }
+.lg-ex    .lg-head { background:rgba(196,80,126,.15); }
+.lg-ex    .lg-title { color:var(--wine-lt); }
+.lg-ex    .linker-word { color:var(--wine-lt); }
+.lg-conc  .lg-head { background:rgba(124,92,191,.15); }
+.lg-conc  .lg-title { color:var(--gen-lt); }
+.lg-conc  .linker-word { color:var(--gen-lt); }
+
+/* ── QUICK REF CARD ── */
+.quickref {
+  max-width:1280px; margin:0 auto;
+  padding: 4rem 2rem;
+}
+.quickref h2 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.6rem,3vw,2.2rem); font-weight:700;
+  color:var(--cream); margin-bottom:.4rem;
+}
+.qr-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:.8rem; margin-top:1.5rem;
+}
+.qr-card {
+  background:var(--navy2); border:1px solid rgba(255,255,255,.07);
+  border-radius:12px; padding:1rem 1.1rem;
+  transition:transform .2s, border-color .2s;
+}
+.qr-card:hover { transform:translateY(-2px); border-color:rgba(201,168,76,.3); }
+.qr-function { font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-dk); margin-bottom:.4rem; }
+.qr-phrase { font-size:.88rem; color:var(--cream); font-style:italic; line-height:1.5; }
+
+/* ── FOOTER ── */
+footer {
+  background:var(--navy); border-top:1px solid rgba(255,255,255,.06);
+  text-align:center; padding:2.5rem 2rem;
+  color:var(--muted); font-size:.85rem; line-height:1.9;
+}
+footer strong { color:var(--gold); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(24px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes bounce {
+  0%,100% { transform:translateX(-50%) translateY(0); }
+  50%      { transform:translateX(-50%) translateY(8px); }
+}
+.reveal { opacity:0; transform:translateY(28px); transition:opacity .65s ease, transform .65s ease; }
+.reveal.in { opacity:1; transform:none; }
+
+@media(max-width:600px) {
+  .hero-stats { gap:2rem; }
+  .filterbar { padding:.6rem 1rem; }
+  .search-inp { width:130px; }
+  .cards-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<div id="prog"></div>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <span class="topbar-brand">🎓 Maturità Speaking — Phrase Bank · 5ª PA</span>
+  <span class="topbar-meta">IIS Mendel · Villa Cortese (MI) · Prof. Crespi</span>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-kicker">Esame di Stato · 5° PA Professionale Agrario - Prof. Crespi</div>
+  <h1>Speak with<br><em>Confidence</em></h1>
+  <p class="hero-sub">Your personal phrase bank for the Maturità oral exam — 5ª PA edition. Covers Farming, CAP, Animal Welfare, Sustainability &amp; Agenda 2030, and General oral skills.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">25</div><div class="stat-label">Key Phrases</div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-label">Topics Covered</div></div>
+    <div class="stat"><div class="stat-num">36</div><div class="stat-label">Linkers & Connectors</div></div>
+    <div class="stat"><div class="stat-num">B2+</div><div class="stat-label">Target Level</div></div>
+  </div>
+  <div class="hero-topics">
+    <span class="topic-chip chip-farm">🌾 Types of Farming</span>
+    <span class="topic-chip chip-cap">📋 CAP</span>
+    <span class="topic-chip chip-aw">🐄 Animal Welfare</span>
+    <span class="topic-chip chip-sus">🌍 Sustainability & SDGs</span>
+    <span class="topic-chip chip-gen">💬 General Oral</span>
+  </div>
+  <div class="scroll-cue">↓ scroll to explore</div>
+</section>
+
+<!-- STICKY FILTER BAR -->
+<div class="filterbar" id="filterbar">
+  <span class="filterbar-label">Filter:</span>
+  <button class="fbtn on" data-f="all"  onclick="filter('all',this)">All Topics</button>
+  <button class="fbtn"    data-f="farm" onclick="filter('farm',this)">🌾 Farming</button>
+  <button class="fbtn"    data-f="cap"    onclick="filter('cap',this)">📋 CAP</button>
+  <button class="fbtn"    data-f="aw"   onclick="filter('aw',this)">🐄 Animal Welfare</button>
+  <button class="fbtn"    data-f="sus"    onclick="filter('sus',this)">🌍 Sustainability</button>
+  <button class="fbtn"    data-f="gen"    onclick="filter('gen',this)">💬 General</button>
+  <div class="search-wrap">
+    <input class="search-inp" id="searchInp" placeholder="🔍 Search phrases..." oninput="searchPhrases(this.value)">
+  </div>
+</div>
+
+<!-- PHRASES -->
+<div class="phrases-section">
+
+  <h2>Topic <em>Phrase Bank</em></h2>
+  <p class="section-desc">Click any phrase to copy it to the clipboard. The coloured bar on the left indicates the topic. The highlighted words in <em>italics</em> are the key expressions — learn these first.</p>
+
+  <div class="cards-grid" id="allCards">
+
+    <!-- ══ TYPES OF FARMING ══ -->
+    <div class="pcard reveal" data-t="farm">
+      <div class="pcard-top">
+        <span class="pcard-num">01</span>
+        <div class="pcard-en"><mark>Modern agriculture can be broadly divided into</mark> two contrasting systems: intensive farming, which maximises output per unit area, and extensive farming, which works more in harmony with natural processes.</div>
+      </div>
+      <div class="pcard-it">L'agricoltura moderna può essere suddivisa in due sistemi contrapposti: l'agricoltura intensiva, che massimizza la produzione per unità di superficie, e quella estensiva, che opera più in armonia con i processi naturali.</div>
+      <div class="pcard-footer"><span class="pcard-tag">Farming · Define</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="farm">
+      <div class="pcard-top">
+        <span class="pcard-num">02</span>
+        <div class="pcard-en"><mark>Organic farming is based on the principle that</mark> soil health, biodiversity, and ecological balance are the foundations of long-term food production.</div>
+      </div>
+      <div class="pcard-it">L'agricoltura biologica si basa sul principio che la salute del suolo, la biodiversità e l'equilibrio ecologico sono le fondamenta della produzione alimentare a lungo termine.</div>
+      <div class="pcard-footer"><span class="pcard-tag">Farming · Organic</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="farm">
+      <div class="pcard-top">
+        <span class="pcard-num">03</span>
+        <div class="pcard-en"><mark>Precision agriculture makes use of</mark> digital technologies such as GPS, drones, and sensors to optimise resource use and reduce environmental impact.</div>
+      </div>
+      <div class="pcard-it">L'agricoltura di precisione utilizza tecnologie digitali come GPS, droni e sensori per ottimizzare l'uso delle risorse e ridurre l'impatto ambientale.</div>
+      <div class="pcard-footer"><span class="pcard-tag">Farming · Technology</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="farm">
+      <div class="pcard-top">
+        <span class="pcard-num">04</span>
+        <div class="pcard-en"><mark>Crop rotation plays a crucial role in</mark> maintaining soil fertility, breaking pest cycles, and reducing the need for synthetic inputs.</div>
+      </div>
+      <div class="pcard-it">La rotazione colturale svolge un ruolo cruciale nel mantenimento della fertilità del suolo, nell'interruzione dei cicli dei parassiti e nella riduzione del fabbisogno di input sintetici.</div>
+      <div class="pcard-footer"><span class="pcard-tag">Farming · Practice</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="farm">
+      <div class="pcard-top">
+        <span class="pcard-num">05</span>
+        <div class="pcard-en"><mark>The main challenge facing farmers today is</mark> finding a balance between economic viability, environmental responsibility, and social equity — the three pillars of sustainable development.</div>
+      </div>
+      <div class="pcard-it">La sfida principale che i contadini affrontano oggi è trovare un equilibrio tra redditività economica, responsabilità ambientale ed equità sociale — i tre pilastri dello sviluppo sostenibile.</div>
+      <div class="pcard-footer"><span class="pcard-tag">Farming · Challenges</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <!-- ══ ANIMAL WELFARE ══ -->
+    <div class="pcard reveal" data-t="aw">
+      <div class="pcard-top">
+        <span class="pcard-num">06</span>
+        <div class="pcard-en"><mark>Animal welfare refers to</mark> the physical and mental well-being of animals under human care — it is both a scientific discipline and an ethical obligation.</div>
+      </div>
+      <div class="pcard-it">Il benessere animale si riferisce al benessere fisico e mentale degli animali sotto la cura umana — è sia una disciplina scientifica sia un obbligo etico.</div>
+      <div class="pcard-footer"><span class="pcard-tag">Animal Welfare · Define</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="aw">
+      <div class="pcard-top">
+        <span class="pcard-num">07</span>
+        <div class="pcard-en"><mark>The Five Freedoms framework establishes that</mark> all livestock must be free from hunger, discomfort, pain, fear, and must be able to express normal behaviour.</div>
+      </div>
+      <div class="pcard-it">Il framework delle Cinque Libertà stabilisce che tutti gli animali da allevamento devono essere liberi da fame, disagio, dolore, paura e devono poter esprimere il comportamento normale.</div>
+      <div class="pcard-footer"><span class="pcard-tag">Animal Welfare · Framework</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="aw">
+      <div class="pcard-top">
+        <span class="pcard-num">08</span>
+        <div class="pcard-en"><mark>There is growing evidence that</mark> overcrowding — not the farming system itself — is the primary driver of animal welfare violations in modern livestock production.</div>
+      </div>
+      <div class="pcard-it">Ci sono prove crescenti che il sovraffollamento — non il sistema di allevamento in sé — è il principale responsabile delle violazioni del benessere animale nella produzione moderna.</div>
+      <div class="pcard-footer"><span class="pcard-tag">Animal Welfare · Argue</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="aw">
+      <div class="pcard-top">
+        <span class="pcard-num">09</span>
+        <div class="pcard-en"><mark>High welfare standards are not in conflict with farm productivity —</mark> on the contrary, healthier animals produce better quality products and require fewer pharmaceutical interventions.</div>
+      </div>
+      <div class="pcard-it">Gli alti standard di benessere non sono in conflitto con la produttività aziendale — al contrario, animali più sani producono prodotti di qualità superiore e richiedono meno interventi farmaceutici.</div>
+      <div class="pcard-footer"><span class="pcard-tag">Animal Welfare · Key Idea</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="aw">
+      <div class="pcard-top">
+        <span class="pcard-num">10</span>
+        <div class="pcard-en"><mark>The One Health approach recognises that</mark> human health, animal health, and environmental health are inseparably linked — a concept central to modern veterinary and agricultural policy.</div>
+      </div>
+      <div class="pcard-it">L'approccio One Health riconosce che la salute umana, animale e ambientale sono inseparabilmente collegate — un concetto centrale della moderna politica veterinaria e agricola.</div>
+      <div class="pcard-footer"><span class="pcard-tag">Animal Welfare · One Health</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <!-- ══ SUSTAINABILITY & AGENDA 2030 ══ -->
+    <div class="pcard reveal" data-t="sus">
+      <div class="pcard-top">
+        <span class="pcard-num">11</span>
+        <div class="pcard-en"><mark>The United Nations 2030 Agenda sets out</mark> 17 Sustainable Development Goals designed to end poverty, protect the planet, and ensure prosperity for all by 2030.</div>
+      </div>
+      <div class="pcard-it">L'Agenda 2030 delle Nazioni Unite stabilisce 17 Obiettivi di Sviluppo Sostenibile volti a porre fine alla povertà, proteggere il pianeta e garantire prosperità per tutti entro il 2030.</div>
+      <div class="pcard-footer"><span class="pcard-tag">Sustainability · SDGs</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="sus">
+      <div class="pcard-top">
+        <span class="pcard-num">12</span>
+        <div class="pcard-en"><mark>Agriculture is directly linked to at least 12 of the 17 SDGs,</mark> making it one of the most critical sectors for achieving global sustainability goals.</div>
+      </div>
+      <div class="pcard-it">L'agricoltura è direttamente collegata ad almeno 12 dei 17 SDG, il che la rende uno dei settori più critici per il raggiungimento degli obiettivi globali di sostenibilità.</div>
+      <div class="pcard-footer"><span class="pcard-tag">Sustainability · Agriculture Link</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="sus">
+      <div class="pcard-top">
+        <span class="pcard-num">13</span>
+        <div class="pcard-en"><mark>Sustainable development can be defined as</mark> development that meets the needs of the present without compromising the ability of future generations to meet their own needs.</div>
+      </div>
+      <div class="pcard-it">Lo sviluppo sostenibile può essere definito come uno sviluppo che soddisfa i bisogni del presente senza compromettere la capacità delle generazioni future di soddisfare i propri bisogni.</div>
+      <div class="pcard-footer"><span class="pcard-tag">Sustainability · Define</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="sus">
+      <div class="pcard-top">
+        <span class="pcard-num">14</span>
+        <div class="pcard-en"><mark>The EU Green Deal and Farm to Fork Strategy aim to</mark> transform European food systems into fair, healthy, and environmentally sustainable models by 2030.</div>
+      </div>
+      <div class="pcard-it">Il Green Deal europeo e la strategia Farm to Fork mirano a trasformare i sistemi alimentari europei in modelli equi, sani e ambientalmente sostenibili entro il 2030.</div>
+      <div class="pcard-footer"><span class="pcard-tag">Sustainability · EU Policy</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="sus">
+      <div class="pcard-top">
+        <span class="pcard-num">15</span>
+        <div class="pcard-en"><mark>This topic is directly connected to SDG [number], which states that</mark> … — a goal that our agricultural sector has both a responsibility and an opportunity to contribute to.</div>
+      </div>
+      <div class="pcard-it">Questo argomento è direttamente collegato all'SDG [numero], che afferma che … — un obiettivo al quale il nostro settore agricolo ha sia la responsabilità sia l'opportunità di contribuire.</div>
+      <div class="pcard-footer"><span class="pcard-tag">Sustainability · SDG Link (flexible)</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <!-- ══ CAP — Common Agricultural Policy ══ -->
+    <div class="pcard reveal" data-t="cap">
+      <div class="pcard-top">
+        <span class="pcard-num">16</span>
+        <div class="pcard-en"><mark>The Common Agricultural Policy, or CAP, is the EU's main framework for</mark> supporting farmers, managing agricultural markets, and ensuring food security across all Member States.</div>
+      </div>
+      <div class="pcard-it">La Politica Agricola Comune, o PAC, è il principale strumento dell'UE per sostenere gli agricoltori, gestire i mercati agricoli e garantire la sicurezza alimentare in tutti gli Stati membri.</div>
+      <div class="pcard-footer"><span class="pcard-tag">CAP · Define</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="cap">
+      <div class="pcard-top">
+        <span class="pcard-num">17</span>
+        <div class="pcard-en"><mark>The CAP was established in 1962 and has undergone several major reforms,</mark> shifting from production subsidies to direct payments decoupled from output, and increasingly linking support to environmental and welfare standards.</div>
+      </div>
+      <div class="pcard-it">La PAC fu istituita nel 1962 e ha subito diverse riforme importanti, passando dai sussidi alla produzione ai pagamenti diretti disaccoppiati dalla produzione, collegando sempre più il sostegno agli standard ambientali e di benessere.</div>
+      <div class="pcard-footer"><span class="pcard-tag">CAP · History</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="cap">
+      <div class="pcard-top">
+        <span class="pcard-num">18</span>
+        <div class="pcard-en"><mark>One of the key instruments of the CAP is the system of direct payments,</mark> also known as the Basic Income Support for Sustainability, which provides farmers with a stable income base regardless of market fluctuations.</div>
+      </div>
+      <div class="pcard-it">Uno degli strumenti chiave della PAC è il sistema dei pagamenti diretti, noto anche come Sostegno di base al reddito per la sostenibilità, che fornisce agli agricoltori una base di reddito stabile indipendentemente dalle fluttuazioni del mercato.</div>
+      <div class="pcard-footer"><span class="pcard-tag">CAP · Direct Payments</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="cap">
+      <div class="pcard-top">
+        <span class="pcard-num">19</span>
+        <div class="pcard-en"><mark>The current CAP reform, which came into force in 2023, introduces the concept of eco-schemes,</mark> which reward farmers who go beyond baseline environmental requirements — for example, by adopting organic practices, reducing pesticide use, or improving animal welfare.</div>
+      </div>
+      <div class="pcard-it">La riforma PAC attuale, entrata in vigore nel 2023, introduce il concetto di eco-regimi, che premiano gli agricoltori che vanno oltre i requisiti ambientali di base — ad esempio adottando pratiche biologiche, riducendo l'uso di pesticidi o migliorando il benessere animale.</div>
+      <div class="pcard-footer"><span class="pcard-tag">CAP · Eco-schemes 2023</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="cap">
+      <div class="pcard-top">
+        <span class="pcard-num">20</span>
+        <div class="pcard-en"><mark>The CAP is structured around two pillars:</mark> Pillar I provides direct payments and market support, while Pillar II funds rural development programmes, including investment in farm modernisation, agri-environment measures, and support for young farmers.</div>
+      </div>
+      <div class="pcard-it">La PAC è strutturata attorno a due pilastri: il Primo Pilastro fornisce pagamenti diretti e sostegno al mercato, mentre il Secondo Pilastro finanzia programmi di sviluppo rurale, tra cui investimenti nella modernizzazione delle aziende, misure agro-ambientali e supporto ai giovani agricoltori.</div>
+      <div class="pcard-footer"><span class="pcard-tag">CAP · Two Pillars</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="cap">
+      <div class="pcard-top">
+        <span class="pcard-num">21</span>
+        <div class="pcard-en"><mark>Critics of the CAP argue that</mark> historically the policy has favoured large-scale industrial farms over small family enterprises, and that future reforms must rebalance support toward more sustainable, climate-friendly, and welfare-oriented models of farming.</div>
+      </div>
+      <div class="pcard-it">I critici della PAC sostengono che storicamente la politica ha favorito le grandi aziende industriali rispetto alle piccole imprese familiari, e che le riforme future devono riequilibrare il sostegno verso modelli agricoli più sostenibili, rispettosi del clima e orientati al benessere.</div>
+      <div class="pcard-footer"><span class="pcard-tag">CAP · Critical View</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <!-- ══ GENERAL ORAL ══ -->
+    <div class="pcard reveal" data-t="gen">
+      <div class="pcard-top">
+        <span class="pcard-num">22</span>
+        <div class="pcard-en"><mark>In my opinion,</mark> this is one of the most significant challenges in modern agriculture, because it touches on environmental, economic, and ethical dimensions simultaneously.</div>
+      </div>
+      <div class="pcard-it">A mio avviso, questa è una delle sfide più significative dell'agricoltura moderna, perché tocca contemporaneamente dimensioni ambientali, economiche ed etiche.</div>
+      <div class="pcard-footer"><span class="pcard-tag">General · Opinion</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="gen">
+      <div class="pcard-top">
+        <span class="pcard-num">23</span>
+        <div class="pcard-en"><mark>According to recent research,</mark> … — a finding that has significant implications for how we approach this issue both at the farm level and in terms of national policy.</div>
+      </div>
+      <div class="pcard-it">Secondo ricerche recenti, … — una scoperta che ha implicazioni significative per come affrontiamo questo problema sia a livello aziendale sia in termini di politica nazionale.</div>
+      <div class="pcard-footer"><span class="pcard-tag">General · Evidence</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="gen">
+      <div class="pcard-top">
+        <span class="pcard-num">24</span>
+        <div class="pcard-en"><mark>While it is true that</mark> … , we must also consider that … , which fundamentally changes the picture when we look at long-term consequences.</div>
+      </div>
+      <div class="pcard-it">Sebbene sia vero che … , dobbiamo anche considerare che … , il che cambia fondamentalmente il quadro quando guardiamo alle conseguenze a lungo termine.</div>
+      <div class="pcard-footer"><span class="pcard-tag">General · Balance</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="gen">
+      <div class="pcard-top">
+        <span class="pcard-num">25</span>
+        <div class="pcard-en"><mark>To conclude,</mark> I believe that … is not just a technical or agronomic issue — it is ultimately a question of values, responsibility, and the kind of future we want to build.</div>
+      </div>
+      <div class="pcard-it">Per concludere, ritengo che … non sia solo una questione tecnica o agronomica — è in definitiva una questione di valori, responsabilità e del tipo di futuro che vogliamo costruire.</div>
+      <div class="pcard-footer"><span class="pcard-tag">General · Conclude</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+  </div><!-- /cards-grid -->
+</div><!-- /phrases-section -->
+
+<div style="max-width:1280px;margin:0 auto;padding:0 2rem"><div class="section-divider"></div></div>
+
+<!-- LINKERS SECTION -->
+<div class="linkers-section">
+  <div class="linkers-inner">
+    <h2>Linkers &amp; <em>Connectors</em></h2>
+    <p class="section-desc">The difference between a B1 and a B2+ answer is often the quality of the connectors. Use these to make your spoken English flow logically, vary your structure, and show command of the language.</p>
+
+    <div class="linker-grid">
+
+      <div class="linker-group lg-add reveal">
+        <div class="lg-head"><span class="lg-icon">➕</span><span class="lg-title">Adding Information</span></div>
+        <div class="lg-body">
+          <div class="linker-item"><span class="linker-word">Furthermore,</span><span class="linker-example">… organic farming also improves soil structure.</span></div>
+          <div class="linker-item"><span class="linker-word">Moreover,</span><span class="linker-example">… pasture-raised products have higher nutritional value.</span></div>
+          <div class="linker-item"><span class="linker-word">In addition (to this),</span><span class="linker-example">… the EU mandates rigorous labelling.</span></div>
+          <div class="linker-item"><span class="linker-word">What is more,</span><span class="linker-example">… climate change is accelerating these pressures.</span></div>
+          <div class="linker-item"><span class="linker-word">Not only … but also</span><span class="linker-example">Not only does it reduce waste, but it also saves energy.</span></div>
+          <div class="linker-item"><span class="linker-word">On top of that,</span><span class="linker-example">… consumer demand for organic products is rising.</span></div>
+        </div>
+      </div>
+
+      <div class="linker-group lg-contr reveal">
+        <div class="lg-head"><span class="lg-icon">⚡</span><span class="lg-title">Contrasting</span></div>
+        <div class="lg-body">
+          <div class="linker-item"><span class="linker-word">However,</span><span class="linker-example">… intensive farming remains widespread globally.</span></div>
+          <div class="linker-item"><span class="linker-word">Nevertheless,</span><span class="linker-example">… many farmers are making the transition.</span></div>
+          <div class="linker-item"><span class="linker-word">On the other hand,</span><span class="linker-example">… GMOs could help feed a growing population.</span></div>
+          <div class="linker-item"><span class="linker-word">Despite (the fact that)</span><span class="linker-example">Despite the risks, adoption of GMOs is increasing.</span></div>
+          <div class="linker-item"><span class="linker-word">Even though / Although</span><span class="linker-example">Although yields are higher, welfare standards fall.</span></div>
+          <div class="linker-item"><span class="linker-word">In contrast (to this),</span><span class="linker-example">… pasture-based systems work with nature.</span></div>
+        </div>
+      </div>
+
+      <div class="linker-group lg-cause reveal">
+        <div class="lg-head"><span class="lg-icon">🔗</span><span class="lg-title">Cause &amp; Effect</span></div>
+        <div class="lg-body">
+          <div class="linker-item"><span class="linker-word">Therefore,</span><span class="linker-example">… stricter regulations are urgently needed.</span></div>
+          <div class="linker-item"><span class="linker-word">As a result (of this),</span><span class="linker-example">… antibiotic resistance is increasing worldwide.</span></div>
+          <div class="linker-item"><span class="linker-word">Consequently,</span><span class="linker-example">… soil degradation becomes inevitable over time.</span></div>
+          <div class="linker-item"><span class="linker-word">This leads to</span><span class="linker-example">Overcrowding leads to a cascade of welfare failures.</span></div>
+          <div class="linker-item"><span class="linker-word">Due to / Owing to</span><span class="linker-example">Due to climate change, harvest dates have shifted.</span></div>
+          <div class="linker-item"><span class="linker-word">This is why</span><span class="linker-example">This is why the EU introduced the Farm to Fork policy.</span></div>
+        </div>
+      </div>
+
+      <div class="linker-group lg-seq reveal">
+        <div class="lg-head"><span class="lg-icon">📋</span><span class="lg-title">Sequencing &amp; Structuring</span></div>
+        <div class="lg-body">
+          <div class="linker-item"><span class="linker-word">First of all, / To begin with,</span><span class="linker-example">First of all, it is important to define the term.</span></div>
+          <div class="linker-item"><span class="linker-word">Secondly, / Then,</span><span class="linker-example">Secondly, we can look at the environmental impact.</span></div>
+          <div class="linker-item"><span class="linker-word">Moving on to</span><span class="linker-example">Moving on to the economic side of the argument…</span></div>
+          <div class="linker-item"><span class="linker-word">Subsequently,</span><span class="linker-example">Subsequently, the EU updated its legislation.</span></div>
+          <div class="linker-item"><span class="linker-word">Finally, / Lastly,</span><span class="linker-example">Finally, we should consider consumer behaviour.</span></div>
+          <div class="linker-item"><span class="linker-word">This brings me to</span><span class="linker-example">This brings me to the question of sustainability.</span></div>
+        </div>
+      </div>
+
+      <div class="linker-group lg-ex reveal">
+        <div class="lg-head"><span class="lg-icon">📌</span><span class="lg-title">Giving Examples</span></div>
+        <div class="lg-body">
+          <div class="linker-item"><span class="linker-word">For example, / For instance,</span><span class="linker-example">For example, Sangiovese is a key Italian grape variety.</span></div>
+          <div class="linker-item"><span class="linker-word">A case in point is</span><span class="linker-example">A case in point is the Danish welfare labelling system.</span></div>
+          <div class="linker-item"><span class="linker-word">Such as</span><span class="linker-example">Ruminants such as cattle, sheep, and goats are central.</span></div>
+          <div class="linker-item"><span class="linker-word">To illustrate (this),</span><span class="linker-example">To illustrate, overgrazing leads to soil erosion.</span></div>
+          <div class="linker-item"><span class="linker-word">This is illustrated by</span><span class="linker-example">This is illustrated by the success of organic wine in Italy.</span></div>
+          <div class="linker-item"><span class="linker-word">In particular,</span><span class="linker-example">In particular, the Po Valley faces serious nitrate pollution.</span></div>
+        </div>
+      </div>
+
+      <div class="linker-group lg-conc reveal">
+        <div class="lg-head"><span class="lg-icon">🏁</span><span class="lg-title">Concluding &amp; Summarising</span></div>
+        <div class="lg-body">
+          <div class="linker-item"><span class="linker-word">To conclude, / In conclusion,</span><span class="linker-example">To conclude, sustainable farming is the only viable path.</span></div>
+          <div class="linker-item"><span class="linker-word">All things considered,</span><span class="linker-example">All things considered, the benefits outweigh the risks.</span></div>
+          <div class="linker-item"><span class="linker-word">On balance,</span><span class="linker-example">On balance, I believe organic farming is the future.</span></div>
+          <div class="linker-item"><span class="linker-word">In the light of</span><span class="linker-example">In the light of recent evidence, we must act now.</span></div>
+          <div class="linker-item"><span class="linker-word">To sum up,</span><span class="linker-example">To sum up, welfare and productivity are not opposites.</span></div>
+          <div class="linker-item"><span class="linker-word">It is clear that</span><span class="linker-example">It is clear that agriculture must adapt to climate change.</span></div>
+        </div>
+      </div>
+
+    </div><!-- /linker-grid -->
+  </div>
+</div><!-- /linkers-section -->
+
+<!-- QUICK REFERENCE -->
+<div class="quickref reveal">
+  <h2>⚡ Quick-Start <em>Sentence Starters</em></h2>
+  <p class="section-desc" style="margin-top:.4rem;">Stuck for words? These openers will buy you time and start your answer confidently. Learn 5 by heart before the exam.</p>
+  <div class="qr-grid">
+    <div class="qr-card"><div class="qr-function">Express opinion</div><div class="qr-phrase">In my opinion / From my point of view / I strongly believe that…</div></div>
+    <div class="qr-card"><div class="qr-function">Cite evidence</div><div class="qr-phrase">According to recent studies / Research has shown that / The FAO states that…</div></div>
+    <div class="qr-card"><div class="qr-function">Define a term</div><div class="qr-phrase">[Term] can be defined as / refers to / is generally understood to mean…</div></div>
+    <div class="qr-card"><div class="qr-function">Compare two things</div><div class="qr-phrase">While [A] focuses on … , [B] prioritises… / In contrast to [A], [B]…</div></div>
+    <div class="qr-card"><div class="qr-function">Introduce a problem</div><div class="qr-phrase">One of the most pressing issues is / A major challenge in this field is…</div></div>
+    <div class="qr-card"><div class="qr-function">Propose a solution</div><div class="qr-phrase">A possible solution would be to / Governments should / The key is to…</div></div>
+    <div class="qr-card"><div class="qr-function">Link to SDGs</div><div class="qr-phrase">This is directly connected to SDG [n], which aims to…</div></div>
+    <div class="qr-card"><div class="qr-function">Buy thinking time</div><div class="qr-phrase">That's a great question. Let me think about that for a moment…</div></div>
+    <div class="qr-card"><div class="qr-function">Concede a point</div><div class="qr-phrase">I understand why some people argue that… however…</div></div>
+    <div class="qr-card"><div class="qr-function">Wrap up</div><div class="qr-phrase">To conclude / All things considered / In the light of what we've discussed…</div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>🎓 <strong>Speak with Confidence</strong> — Maturità Oral Phrase Bank · <strong>5ª PA</strong></p>
+  <p>Pagina creata dal <strong>Prof. Crespi</strong> per l'<strong>IIS MENDEL</strong> — Villa Cortese (MI)</p>
+  <p style="margin-top:.5rem;font-size:.78rem;opacity:.5;">Per tutte le quinte · Topics: Winemaking · Farming · GMOs · Animal Welfare · Sustainability & Agenda 2030</p>
+</footer>
+
+<script>
+// Progress bar
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  document.getElementById('prog').style.width =
+    (window.scrollY / (h.scrollHeight - h.clientHeight) * 100) + '%';
+});
+
+// Reveal on scroll
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Filter
+function filter(f, btn) {
+  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('searchInp').value = '';
+  document.querySelectorAll('.pcard').forEach(c => {
+    c.classList.toggle('pcard-hidden', f !== 'all' && c.dataset.t !== f);
+  });
+}
+
+// Search
+function searchPhrases(q) {
+  const s = q.toLowerCase();
+  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
+  document.querySelector('.fbtn[data-f="all"]').classList.add('on');
+  document.querySelectorAll('.pcard').forEach(c => {
+    c.classList.toggle('pcard-hidden', s.length > 1 && !c.innerText.toLowerCase().includes(s));
+  });
+}
+
+// Copy to clipboard
+function copyPhrase(btn) {
+  const card = btn.closest('.pcard');
+  const en = card.querySelector('.pcard-en').innerText.trim();
+  navigator.clipboard.writeText(en).then(() => {
+    btn.textContent = '✓ copied';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'copy'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
+</body>
+</html>
