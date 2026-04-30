@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Speak with Confidence — Maturità Speaking 5ªPA | IIS Mendel</title>
+<title>Speak with Confidence — Maturità Oral Exam 5ªPA | IIS Mendel</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -279,7 +279,6 @@ body {
   width:4px; border-radius:4px 0 0 4px;
 }
 .pcard[data-t="wine"]::before { background:var(--wine-lt); }
-.pcard[data-t="hist"]::before { background:var(--farm-lt); }
 .pcard[data-t="gmo"]::before  { background:var(--gmo-lt); }
 .pcard[data-t="aw"]::before   { background:var(--aw-lt); }
 .pcard[data-t="sus"]::before  { background:var(--sus-lt); }
@@ -306,7 +305,6 @@ body {
   background:transparent; font-weight:700; font-style:italic;
 }
 .pcard[data-t="wine"] .pcard-en mark  { color:var(--wine-lt); }
-.pcard[data-t="hist"] .pcard-en mark  { color:var(--farm-lt); }
 .pcard[data-t="gmo"]  .pcard-en mark  { color:var(--gmo-lt); }
 .pcard[data-t="aw"]   .pcard-en mark  { color:var(--aw-lt); }
 .pcard[data-t="sus"]  .pcard-en mark  { color:var(--sus-lt); }
@@ -326,7 +324,6 @@ body {
   padding:2px 9px; border-radius:10px;
 }
 .pcard[data-t="wine"] .pcard-tag  { background:rgba(196,80,126,.18); color:var(--wine-lt); }
-.pcard[data-t="hist"] .pcard-tag  { background:rgba(94,163,85,.18);  color:var(--farm-lt); }
 .pcard[data-t="gmo"]  .pcard-tag  { background:rgba(46,134,193,.18); color:var(--gmo-lt); }
 .pcard[data-t="aw"]   .pcard-tag  { background:rgba(192,112,40,.18); color:var(--aw-lt); }
 .pcard[data-t="sus"]  .pcard-tag  { background:rgba(39,168,122,.18); color:var(--sus-lt); }
@@ -474,7 +471,7 @@ footer strong { color:var(--gold); }
 
 <!-- TOPBAR -->
 <header class="topbar">
-  <span class="topbar-brand">🎓 Maturità Speaking — Phrase Bank · 5ª PA</span>
+  <span class="topbar-brand">🎓 Maturità Oral Exam— Phrase Bank · 5ª PA</span>
   <span class="topbar-meta">IIS Mendel · Villa Cortese (MI) · Prof. Crespi</span>
 </header>
 
@@ -490,12 +487,11 @@ footer strong { color:var(--gold); }
     <div class="stat"><div class="stat-num">B2+</div><div class="stat-label">Target Level</div></div>
   </div>
   <div class="hero-topics">
-    <span class="topic-chip chip-farm">🌾 Types of Farming</span>
-    <span class="topic-chip chip-hist">📜 History of Farming</span>
+    <span class="topic-chip chip-hist">📜 History &amp; Types of Farming</span>
     <span class="topic-chip chip-cap">📋 CAP</span>
     <span class="topic-chip chip-aw">🐄 Animal Welfare</span>
     <span class="topic-chip chip-sus">🌍 Sustainability & SDGs</span>
-    <span class="topic-chip chip-gen">💬 General Speaking </span>
+    <span class="topic-chip chip-gen">💬 General Oral Exam</span>
   </div>
   <div class="scroll-cue">↓ scroll to explore</div>
 </section>
@@ -504,8 +500,7 @@ footer strong { color:var(--gold); }
 <div class="filterbar" id="filterbar">
   <span class="filterbar-label">Filter:</span>
   <button class="fbtn on" data-f="all"  onclick="filter('all',this)">All Topics</button>
-  <button class="fbtn"    data-f="farm" onclick="filter('farm',this)">🌾 Farming</button>
-  <button class="fbtn"    data-f="hist"   onclick="filter('hist',this)">📜 History</button>
+  <button class="fbtn"    data-f="hist" onclick="filter('hist',this)">📜 History &amp; Farming</button>
   <button class="fbtn"    data-f="cap"    onclick="filter('cap',this)">📋 CAP</button>
   <button class="fbtn"    data-f="aw"   onclick="filter('aw',this)">🐄 Animal Welfare</button>
   <button class="fbtn"    data-f="sus"    onclick="filter('sus',this)">🌍 Sustainability</button>
@@ -626,10 +621,115 @@ footer strong { color:var(--gold); }
       <div class="pcard-footer"><span class="pcard-tag">Farming · Water</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
     </div>
 
-    <!-- ══ ANIMAL WELFARE ══ -->
+    
+    <div class="pcard reveal" data-t="hist">
+      <div class="pcard-top"><span class="pcard-num">13</span>
+        <div class="pcard-en"><mark>For most of human prehistory, during the Paleolithic period,</mark> people were nomadic hunter-gatherers who lived in small clans, moving constantly in search of food and using primitive tools made from bone, wood, and stone.</div>
+      </div>
+      <div class="pcard-it">Per la maggior parte della preistoria umana, durante il Paleolitico, le persone erano cacciatori-raccoglitori nomadi che vivevano in piccoli clan, spostandosi continuamente in cerca di cibo e usando strumenti primitivi di osso, legno e pietra.</div>
+      <div class="pcard-footer"><span class="pcard-tag">History · Paleolithic</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="hist">
+      <div class="pcard-top"><span class="pcard-num">14</span>
+        <div class="pcard-en"><mark>The Neolithic Revolution, which took place between 10,000 and 8,000 years ago, marks</mark> one of the most transformative turning points in human history: people moved from a nomadic lifestyle to settled agricultural communities, learning to plant seeds and domesticate animals.</div>
+      </div>
+      <div class="pcard-it">La Rivoluzione Neolitica, avvenuta tra 10.000 e 8.000 anni fa, segna uno dei punti di svolta più trasformativi nella storia umana: le persone passarono da uno stile di vita nomade a comunità agricole sedentarie, imparando a piantare semi e addomesticare animali.</div>
+      <div class="pcard-footer"><span class="pcard-tag">History · Neolithic Revolution</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="hist">
+      <div class="pcard-top"><span class="pcard-num">15</span>
+        <div class="pcard-en"><mark>Agriculture is believed to have first emerged in the Fertile Crescent,</mark> the region of the eastern Mediterranean stretching from modern-day Turkey through Syria, Lebanon, and into Mesopotamia — where early farmers cultivated wheat, barley, oats, and millet.</div>
+      </div>
+      <div class="pcard-it">Si ritiene che l'agricoltura sia emersa per la prima volta nella Mezzaluna Fertile, la regione del Mediterraneo orientale che si estende dalla moderna Turchia attraverso Siria, Libano e Mesopotamia — dove i primi agricoltori coltivavano grano, orzo, avena e miglio.</div>
+      <div class="pcard-footer"><span class="pcard-tag">History · Fertile Crescent</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="hist">
+      <div class="pcard-top"><span class="pcard-num">16</span>
+        <div class="pcard-en"><mark>During the Roman period, agriculture reached a peak of productivity,</mark> with pioneering techniques in crop storage, field irrigation, and the systematic use of manure as fertiliser — many of which would not be significantly improved upon until the Renaissance.</div>
+      </div>
+      <div class="pcard-it">Durante il periodo romano, l'agricoltura raggiunse un picco di produttività, con tecniche pionieristiche per la conservazione dei raccolti, l'irrigazione dei campi e l'uso sistematico del letame come fertilizzante — molte delle quali non sarebbero state significativamente migliorate fino al Rinascimento.</div>
+      <div class="pcard-footer"><span class="pcard-tag">History · Roman Period</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="hist">
+      <div class="pcard-top"><span class="pcard-num">17</span>
+        <div class="pcard-en"><mark>The Columbian Exchange, following Columbus's arrival in America in 1492,</mark> had a profound impact on world agriculture: new crops such as maize, potatoes, tomatoes, and tobacco were introduced to Europe, completely transforming diets and farming systems on both continents.</div>
+      </div>
+      <div class="pcard-it">Lo Scambio Colombiano, seguito all'arrivo di Colombo in America nel 1492, ebbe un profondo impatto sull'agricoltura mondiale: nuove colture come mais, patate, pomodori e tabacco furono introdotte in Europa, trasformando completamente l'alimentazione e i sistemi agricoli su entrambi i continenti.</div>
+      <div class="pcard-footer"><span class="pcard-tag">History · Columbian Exchange</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="hist">
+      <div class="pcard-top"><span class="pcard-num">18</span>
+        <div class="pcard-en"><mark>The Agricultural Revolution of the 18th century introduced key innovations such as</mark> Jethro Tull's seed drill, crop rotation systems, and selective livestock breeding — dramatically increasing yields and reducing the labour force needed to feed a growing population.</div>
+      </div>
+      <div class="pcard-it">La Rivoluzione Agricola del XVIII secolo introdusse innovazioni chiave come la seminatrice di Jethro Tull, i sistemi di rotazione delle colture e la selezione del bestiame — aumentando drammaticamente le rese e riducendo la forza lavoro necessaria per nutrire una popolazione in crescita.</div>
+      <div class="pcard-footer"><span class="pcard-tag">History · Agricultural Revolution</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="hist">
+      <div class="pcard-top"><span class="pcard-num">19</span>
+        <div class="pcard-en"><mark>Conventional farming, which dominated the 20th century, is characterised by</mark> large-scale monocultures, heavy use of synthetic fertilisers and pesticides, mechanisation, and high capital investment — systems designed to maximise yield at the expense of biodiversity and soil health.</div>
+      </div>
+      <div class="pcard-it">L'agricoltura convenzionale, che ha dominato il XX secolo, è caratterizzata da monocolture su larga scala, uso massiccio di fertilizzanti sintetici e pesticidi, meccanizzazione e alti investimenti di capitale — sistemi progettati per massimizzare le rese a scapito della biodiversità e della salute del suolo.</div>
+      <div class="pcard-footer"><span class="pcard-tag">History · Conventional Farming</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="hist">
+      <div class="pcard-top"><span class="pcard-num">20</span>
+        <div class="pcard-en"><mark>The negative effects of conventional farming include</mark> soil compaction caused by heavy machinery, groundwater pollution from excessive fertiliser use, loss of biodiversity, and the development of antibiotic-resistant bacteria due to the routine treatment of livestock.</div>
+      </div>
+      <div class="pcard-it">Gli effetti negativi dell'agricoltura convenzionale includono la compattazione del suolo causata dai macchinari pesanti, l'inquinamento delle acque sotterranee dovuto all'uso eccessivo di fertilizzanti, la perdita di biodiversità e lo sviluppo di batteri resistenti agli antibiotici a causa del trattamento routinario del bestiame.</div>
+      <div class="pcard-footer"><span class="pcard-tag">History · Conventional Drawbacks</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="hist">
+      <div class="pcard-top"><span class="pcard-num">21</span>
+        <div class="pcard-en"><mark>The organic movement emerged in the 1930s and 1940s as a reaction to</mark> agriculture's growing dependence on synthetic chemicals, and was formalised globally by the founding of IFOAM — the International Federation of Organic Agriculture Movements — in 1972.</div>
+      </div>
+      <div class="pcard-it">Il movimento biologico è emerso negli anni '30 e '40 come reazione alla crescente dipendenza dell'agricoltura dai prodotti chimici sintetici, ed è stato formalizzato a livello globale con la fondazione dell'IFOAM — la Federazione Internazionale dei Movimenti per l'Agricoltura Biologica — nel 1972.</div>
+      <div class="pcard-footer"><span class="pcard-tag">History · Organic Origins</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="hist">
+      <div class="pcard-top"><span class="pcard-num">22</span>
+        <div class="pcard-en"><mark>Biodynamic farming, introduced by Rudolf Steiner in the 1920s, goes beyond organic principles by</mark> treating the farm as a self-sustaining ecosystem, using fermented herbal preparations, composting, and taking into account the influence of cosmic and lunar cycles on plant growth.</div>
+      </div>
+      <div class="pcard-it">L'agricoltura biodinamica, introdotta da Rudolf Steiner negli anni '20, va oltre i principi biologici trattando l'azienda come un ecosistema autosufficiente, usando preparati erboristici fermentati, compostaggio e tenendo conto dell'influenza dei cicli cosmici e lunari sulla crescita delle piante.</div>
+      <div class="pcard-footer"><span class="pcard-tag">History · Biodynamic</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="hist">
+      <div class="pcard-top"><span class="pcard-num">23</span>
+        <div class="pcard-en"><mark>Hydroponics is a soil-less growing method in which</mark> plants receive nutrients directly through water-based solutions, allowing them to grow up to 50% faster than in traditional soil and enabling food production in environments where conventional farming is impossible.</div>
+      </div>
+      <div class="pcard-it">L'idroponica è un metodo di coltivazione senza suolo in cui le piante ricevono i nutrienti direttamente attraverso soluzioni a base d'acqua, permettendo loro di crescere fino al 50% più velocemente che nel suolo tradizionale e consentendo la produzione alimentare in ambienti dove l'agricoltura convenzionale è impossibile.</div>
+      <div class="pcard-footer"><span class="pcard-tag">History · Hydroponics</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="hist">
+      <div class="pcard-top"><span class="pcard-num">24</span>
+        <div class="pcard-en"><mark>Aeroponics differs from hydroponics in that</mark> plant roots are suspended in air and periodically misted with a nutrient-rich solution — requiring even less water than hydroponic systems while achieving high yields in minimal space, making it particularly suited to urban and vertical farming.</div>
+      </div>
+      <div class="pcard-it">L'aeroponica si differenzia dall'idroponica in quanto le radici delle piante sono sospese nell'aria e periodicamente nebulizzate con una soluzione ricca di nutrienti — richiedendo ancora meno acqua dei sistemi idroponici pur raggiungendo alte rese in spazi minimi, rendendola particolarmente adatta all'agricoltura urbana e verticale.</div>
+      <div class="pcard-footer"><span class="pcard-tag">History · Aeroponics</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+    <div class="pcard reveal" data-t="hist">
+      <div class="pcard-top"><span class="pcard-num">25</span>
+        <div class="pcard-en"><mark>If we trace the entire history of farming,</mark> we can observe a clear arc: from the first seeds planted in the Fertile Crescent, through Roman ingenuity, Renaissance improvements, and the Industrial Revolution, to the present-day challenge of feeding 8 billion people sustainably.</div>
+      </div>
+      <div class="pcard-it">Se tracciamo l'intera storia dell'agricoltura, possiamo osservare un arco chiaro: dai primi semi piantati nella Mezzaluna Fertile, attraverso l'ingegnosità romana, i miglioramenti rinascimentali e la Rivoluzione Industriale, fino alla sfida attuale di nutrire 8 miliardi di persone in modo sostenibile.</div>
+      <div class="pcard-footer"><span class="pcard-tag">History · Overview / Conclude</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
+    </div>
+
+        <!-- ══ ANIMAL WELFARE ══ -->
     <div class="pcard reveal" data-t="aw">
       <div class="pcard-top">
-        <span class="pcard-num">13</span>
+        <span class="pcard-num">26</span>
         <div class="pcard-en"><mark>Animal welfare refers to</mark> the physical and mental well-being of animals under human care — it is both a scientific discipline and an ethical obligation.</div>
       </div>
       <div class="pcard-it">Il benessere animale si riferisce al benessere fisico e mentale degli animali sotto la cura umana — è sia una disciplina scientifica sia un obbligo etico.</div>
@@ -638,7 +738,7 @@ footer strong { color:var(--gold); }
 
     <div class="pcard reveal" data-t="aw">
       <div class="pcard-top">
-        <span class="pcard-num">14</span>
+        <span class="pcard-num">27</span>
         <div class="pcard-en"><mark>The Five Freedoms framework establishes that</mark> all livestock must be free from hunger, discomfort, pain, fear, and must be able to express normal behaviour.</div>
       </div>
       <div class="pcard-it">Il framework delle Cinque Libertà stabilisce che tutti gli animali da allevamento devono essere liberi da fame, disagio, dolore, paura e devono poter esprimere il comportamento normale.</div>
@@ -647,7 +747,7 @@ footer strong { color:var(--gold); }
 
     <div class="pcard reveal" data-t="aw">
       <div class="pcard-top">
-        <span class="pcard-num">15</span>
+        <span class="pcard-num">28</span>
         <div class="pcard-en"><mark>There is growing evidence that</mark> overcrowding — not the farming system itself — is the primary driver of animal welfare violations in modern livestock production.</div>
       </div>
       <div class="pcard-it">Ci sono prove crescenti che il sovraffollamento — non il sistema di allevamento in sé — è il principale responsabile delle violazioni del benessere animale nella produzione moderna.</div>
@@ -656,7 +756,7 @@ footer strong { color:var(--gold); }
 
     <div class="pcard reveal" data-t="aw">
       <div class="pcard-top">
-        <span class="pcard-num">16</span>
+        <span class="pcard-num">29</span>
         <div class="pcard-en"><mark>High welfare standards are not in conflict with farm productivity —</mark> on the contrary, healthier animals produce better quality products and require fewer pharmaceutical interventions.</div>
       </div>
       <div class="pcard-it">Gli alti standard di benessere non sono in conflitto con la produttività aziendale — al contrario, animali più sani producono prodotti di qualità superiore e richiedono meno interventi farmaceutici.</div>
@@ -665,7 +765,7 @@ footer strong { color:var(--gold); }
 
     <div class="pcard reveal" data-t="aw">
       <div class="pcard-top">
-        <span class="pcard-num">17</span>
+        <span class="pcard-num">30</span>
         <div class="pcard-en"><mark>The One Health approach recognises that</mark> human health, animal health, and environmental health are inseparably linked — a concept central to modern veterinary and agricultural policy.</div>
       </div>
       <div class="pcard-it">L'approccio One Health riconosce che la salute umana, animale e ambientale sono inseparabilmente collegate — un concetto centrale della moderna politica veterinaria e agricola.</div>
@@ -674,7 +774,7 @@ footer strong { color:var(--gold); }
 
 
     <div class="pcard reveal" data-t="aw">
-      <div class="pcard-top"><span class="pcard-num">18</span>
+      <div class="pcard-top"><span class="pcard-num">31</span>
         <div class="pcard-en"><mark>Animals are now legally recognised as sentient beings in the EU,</mark> which means that their capacity to experience pain, fear, and pleasure must be taken into account in all agricultural and veterinary legislation.</div>
       </div>
       <div class="pcard-it">Gli animali sono ora legalmente riconosciuti come esseri senzienti nell'UE, il che significa che la loro capacità di provare dolore, paura e piacere deve essere presa in considerazione in tutta la legislazione agricola e veterinaria.</div>
@@ -682,7 +782,7 @@ footer strong { color:var(--gold); }
     </div>
 
     <div class="pcard reveal" data-t="aw">
-      <div class="pcard-top"><span class="pcard-num">19</span>
+      <div class="pcard-top"><span class="pcard-num">32</span>
         <div class="pcard-en"><mark>Overcrowding in livestock facilities leads to</mark> a cascade of problems: poor ventilation, restricted movement, increased aggression, rapid disease transmission, and ultimately, heavy dependence on antibiotics and growth promoters.</div>
       </div>
       <div class="pcard-it">Il sovraffollamento negli allevamenti porta a una cascata di problemi: scarsa ventilazione, movimento limitato, aggressività aumentata, rapida trasmissione di malattie e, infine, forte dipendenza da antibiotici e promotori di crescita.</div>
@@ -690,7 +790,7 @@ footer strong { color:var(--gold); }
     </div>
 
     <div class="pcard reveal" data-t="aw">
-      <div class="pcard-top"><span class="pcard-num">20</span>
+      <div class="pcard-top"><span class="pcard-num">33</span>
         <div class="pcard-en"><mark>Free-stabling offers clear advantages over fixed-stabling:</mark> animals can move freely, graze fresh forage, exercise in sunlight, and express natural social behaviours — all of which contribute to better health and product quality.</div>
       </div>
       <div class="pcard-it">La stabulazione libera offre vantaggi evidenti rispetto a quella fissa: gli animali possono muoversi liberamente, brucare foraggio fresco, esercitarsi alla luce solare ed esprimere comportamenti sociali naturali — tutto ciò contribuisce a una migliore salute e qualità del prodotto.</div>
@@ -698,7 +798,7 @@ footer strong { color:var(--gold); }
     </div>
 
     <div class="pcard reveal" data-t="aw">
-      <div class="pcard-top"><span class="pcard-num">21</span>
+      <div class="pcard-top"><span class="pcard-num">34</span>
         <div class="pcard-en"><mark>Routine use of antibiotics in intensive farming is a major driver of</mark> antimicrobial resistance — one of the greatest threats to global public health, as resistant bacteria can spread from animals to humans through the food chain and the environment.</div>
       </div>
       <div class="pcard-it">L'uso routinario di antibiotici nell'allevamento intensivo è un importante motore della resistenza antimicrobica — una delle maggiori minacce alla salute pubblica globale, poiché i batteri resistenti possono diffondersi dagli animali all'uomo attraverso la catena alimentare e l'ambiente.</div>
@@ -706,7 +806,7 @@ footer strong { color:var(--gold); }
     </div>
 
     <div class="pcard reveal" data-t="aw">
-      <div class="pcard-top"><span class="pcard-num">22</span>
+      <div class="pcard-top"><span class="pcard-num">35</span>
         <div class="pcard-en"><mark>In organic livestock farming, health is managed through prevention rather than cure:</mark> good housing conditions, species-appropriate diet, low stocking density, and access to outdoor spaces reduce the incidence of disease without relying on pharmaceutical intervention.</div>
       </div>
       <div class="pcard-it">Nell'allevamento biologico, la salute è gestita attraverso la prevenzione piuttosto che la cura: buone condizioni di ricovero, dieta specie-appropriata, bassa densità di animali e accesso agli spazi esterni riducono l'incidenza delle malattie senza ricorrere all'intervento farmaceutico.</div>
@@ -714,7 +814,7 @@ footer strong { color:var(--gold); }
     </div>
 
     <div class="pcard reveal" data-t="aw">
-      <div class="pcard-top"><span class="pcard-num">23</span>
+      <div class="pcard-top"><span class="pcard-num">36</span>
         <div class="pcard-en"><mark>The European Convention for the Protection of Animals requires that</mark> all farm animals have access to appropriate food, water, care, and an environment that allows them to satisfy their physiological and behavioural needs.</div>
       </div>
       <div class="pcard-it">La Convenzione europea per la protezione degli animali richiede che tutti gli animali da allevamento abbiano accesso a cibo, acqua, cure adeguate e un ambiente che consenta loro di soddisfare i propri bisogni fisiologici e comportamentali.</div>
@@ -722,7 +822,7 @@ footer strong { color:var(--gold); }
     </div>
 
     <div class="pcard reveal" data-t="aw">
-      <div class="pcard-top"><span class="pcard-num">24</span>
+      <div class="pcard-top"><span class="pcard-num">37</span>
         <div class="pcard-en"><mark>As future agricultural professionals, we have a responsibility to</mark> apply welfare standards not just because the law requires it, but because animal well-being, product quality, and environmental sustainability are deeply interconnected.</div>
       </div>
       <div class="pcard-it">Come futuri professionisti agricoli, abbiamo la responsabilità di applicare gli standard di benessere non solo perché la legge lo richiede, ma perché il benessere animale, la qualità del prodotto e la sostenibilità ambientale sono profondamente interconnessi.</div>
@@ -732,7 +832,7 @@ footer strong { color:var(--gold); }
     <!-- ══ SUSTAINABILITY & AGENDA 2030 ══ -->
     <div class="pcard reveal" data-t="sus">
       <div class="pcard-top">
-        <span class="pcard-num">25</span>
+        <span class="pcard-num">38</span>
         <div class="pcard-en"><mark>The United Nations 2030 Agenda sets out</mark> 17 Sustainable Development Goals designed to end poverty, protect the planet, and ensure prosperity for all by 2030.</div>
       </div>
       <div class="pcard-it">L'Agenda 2030 delle Nazioni Unite stabilisce 17 Obiettivi di Sviluppo Sostenibile volti a porre fine alla povertà, proteggere il pianeta e garantire prosperità per tutti entro il 2030.</div>
@@ -741,7 +841,7 @@ footer strong { color:var(--gold); }
 
     <div class="pcard reveal" data-t="sus">
       <div class="pcard-top">
-        <span class="pcard-num">26</span>
+        <span class="pcard-num">39</span>
         <div class="pcard-en"><mark>Agriculture is directly linked to at least 12 of the 17 SDGs,</mark> making it one of the most critical sectors for achieving global sustainability goals.</div>
       </div>
       <div class="pcard-it">L'agricoltura è direttamente collegata ad almeno 12 dei 17 SDG, il che la rende uno dei settori più critici per il raggiungimento degli obiettivi globali di sostenibilità.</div>
@@ -750,7 +850,7 @@ footer strong { color:var(--gold); }
 
     <div class="pcard reveal" data-t="sus">
       <div class="pcard-top">
-        <span class="pcard-num">27</span>
+        <span class="pcard-num">40</span>
         <div class="pcard-en"><mark>Sustainable development can be defined as</mark> development that meets the needs of the present without compromising the ability of future generations to meet their own needs.</div>
       </div>
       <div class="pcard-it">Lo sviluppo sostenibile può essere definito come uno sviluppo che soddisfa i bisogni del presente senza compromettere la capacità delle generazioni future di soddisfare i propri bisogni.</div>
@@ -759,7 +859,7 @@ footer strong { color:var(--gold); }
 
     <div class="pcard reveal" data-t="sus">
       <div class="pcard-top">
-        <span class="pcard-num">28</span>
+        <span class="pcard-num">41</span>
         <div class="pcard-en"><mark>The EU Green Deal and Farm to Fork Strategy aim to</mark> transform European food systems into fair, healthy, and environmentally sustainable models by 2030.</div>
       </div>
       <div class="pcard-it">Il Green Deal europeo e la strategia Farm to Fork mirano a trasformare i sistemi alimentari europei in modelli equi, sani e ambientalmente sostenibili entro il 2030.</div>
@@ -768,7 +868,7 @@ footer strong { color:var(--gold); }
 
     <div class="pcard reveal" data-t="sus">
       <div class="pcard-top">
-        <span class="pcard-num">29</span>
+        <span class="pcard-num">42</span>
         <div class="pcard-en"><mark>This topic is directly connected to SDG [number], which states that</mark> … — a goal that our agricultural sector has both a responsibility and an opportunity to contribute to.</div>
       </div>
       <div class="pcard-it">Questo argomento è direttamente collegato all'SDG [numero], che afferma che … — un obiettivo al quale il nostro settore agricolo ha sia la responsabilità sia l'opportunità di contribuire.</div>
@@ -777,7 +877,7 @@ footer strong { color:var(--gold); }
 
 
     <div class="pcard reveal" data-t="sus">
-      <div class="pcard-top"><span class="pcard-num">30</span>
+      <div class="pcard-top"><span class="pcard-num">43</span>
         <div class="pcard-en"><mark>SDG 2 — Zero Hunger — is directly linked to agriculture,</mark> as it calls for ending hunger, achieving food security, improving nutrition, and promoting sustainable farming by 2030.</div>
       </div>
       <div class="pcard-it">L'SDG 2 — Fame Zero — è direttamente collegato all'agricoltura, poiché chiede di porre fine alla fame, raggiungere la sicurezza alimentare, migliorare la nutrizione e promuovere un'agricoltura sostenibile entro il 2030.</div>
@@ -785,7 +885,7 @@ footer strong { color:var(--gold); }
     </div>
 
     <div class="pcard reveal" data-t="sus">
-      <div class="pcard-top"><span class="pcard-num">31</span>
+      <div class="pcard-top"><span class="pcard-num">44</span>
         <div class="pcard-en"><mark>Climate change is one of the greatest threats to global agriculture,</mark> affecting crop yields, water availability, livestock productivity, and the frequency of extreme weather events such as droughts and floods.</div>
       </div>
       <div class="pcard-it">Il cambiamento climatico è una delle maggiori minacce all'agricoltura globale, influenzando le rese delle colture, la disponibilità d'acqua, la produttività del bestiame e la frequenza di eventi meteorologici estremi come siccità e alluvioni.</div>
@@ -793,7 +893,7 @@ footer strong { color:var(--gold); }
     </div>
 
     <div class="pcard reveal" data-t="sus">
-      <div class="pcard-top"><span class="pcard-num">32</span>
+      <div class="pcard-top"><span class="pcard-num">45</span>
         <div class="pcard-en"><mark>The circular economy model applied to farming means that</mark> waste from one process becomes a resource for another — for example, animal manure becomes organic fertiliser, and crop residues become animal feed or biogas.</div>
       </div>
       <div class="pcard-it">Il modello di economia circolare applicato all'agricoltura significa che i rifiuti di un processo diventano una risorsa per un altro — ad esempio, il letame animale diventa fertilizzante organico e i residui delle colture diventano mangime per animali o biogas.</div>
@@ -801,7 +901,7 @@ footer strong { color:var(--gold); }
     </div>
 
     <div class="pcard reveal" data-t="sus">
-      <div class="pcard-top"><span class="pcard-num">33</span>
+      <div class="pcard-top"><span class="pcard-num">46</span>
         <div class="pcard-en"><mark>Reducing food waste is a key priority of SDG 12,</mark> as approximately one third of all food produced globally is lost or wasted — a figure with enormous environmental, economic, and ethical implications.</div>
       </div>
       <div class="pcard-it">Ridurre lo spreco alimentare è una priorità chiave dell'SDG 12, poiché circa un terzo di tutto il cibo prodotto a livello globale viene perso o sprecato — una cifra con enormi implicazioni ambientali, economiche ed etiche.</div>
@@ -809,7 +909,7 @@ footer strong { color:var(--gold); }
     </div>
 
     <div class="pcard reveal" data-t="sus">
-      <div class="pcard-top"><span class="pcard-num">34</span>
+      <div class="pcard-top"><span class="pcard-num">47</span>
         <div class="pcard-en"><mark>Renewable energy in agriculture — such as solar panels on farm buildings, biogas from manure, and wind turbines — can help farms</mark> reduce their carbon footprint and become more energy-independent.</div>
       </div>
       <div class="pcard-it">Le energie rinnovabili in agricoltura — come i pannelli solari sugli edifici agricoli, il biogas dal letame e le turbine eoliche — possono aiutare le aziende a ridurre la loro impronta di carbonio e a diventare più indipendenti dal punto di vista energetico.</div>
@@ -817,7 +917,7 @@ footer strong { color:var(--gold); }
     </div>
 
     <div class="pcard reveal" data-t="sus">
-      <div class="pcard-top"><span class="pcard-num">35</span>
+      <div class="pcard-top"><span class="pcard-num">48</span>
         <div class="pcard-en"><mark>Biodiversity loss is a silent crisis in modern agriculture:</mark> the widespread use of monocultures and pesticides has led to a dramatic decline in insect populations, native plant species, and soil microorganisms that are essential for ecosystem health.</div>
       </div>
       <div class="pcard-it">La perdita di biodiversità è una crisi silenziosa nell'agricoltura moderna: l'uso diffuso di monocolture e pesticidi ha portato a un drammatico declino delle popolazioni di insetti, delle specie vegetali native e dei microrganismi del suolo essenziali per la salute dell'ecosistema.</div>
@@ -827,7 +927,7 @@ footer strong { color:var(--gold); }
     <!-- ══ CAP — Common Agricultural Policy ══ -->
     <div class="pcard reveal" data-t="cap">
       <div class="pcard-top">
-        <span class="pcard-num">36</span>
+        <span class="pcard-num">49</span>
         <div class="pcard-en"><mark>The Common Agricultural Policy, or CAP, is the EU's main framework for</mark> supporting farmers, managing agricultural markets, and ensuring food security across all Member States.</div>
       </div>
       <div class="pcard-it">La Politica Agricola Comune, o PAC, è il principale strumento dell'UE per sostenere gli agricoltori, gestire i mercati agricoli e garantire la sicurezza alimentare in tutti gli Stati membri.</div>
@@ -836,7 +936,7 @@ footer strong { color:var(--gold); }
 
     <div class="pcard reveal" data-t="cap">
       <div class="pcard-top">
-        <span class="pcard-num">37</span>
+        <span class="pcard-num">50</span>
         <div class="pcard-en"><mark>The CAP was established in 1962 and has undergone several major reforms,</mark> shifting from production subsidies to direct payments decoupled from output, and increasingly linking support to environmental and welfare standards.</div>
       </div>
       <div class="pcard-it">La PAC fu istituita nel 1962 e ha subito diverse riforme importanti, passando dai sussidi alla produzione ai pagamenti diretti disaccoppiati dalla produzione, collegando sempre più il sostegno agli standard ambientali e di benessere.</div>
@@ -845,7 +945,7 @@ footer strong { color:var(--gold); }
 
     <div class="pcard reveal" data-t="cap">
       <div class="pcard-top">
-        <span class="pcard-num">38</span>
+        <span class="pcard-num">51</span>
         <div class="pcard-en"><mark>One of the key instruments of the CAP is the system of direct payments,</mark> also known as the Basic Income Support for Sustainability, which provides farmers with a stable income base regardless of market fluctuations.</div>
       </div>
       <div class="pcard-it">Uno degli strumenti chiave della PAC è il sistema dei pagamenti diretti, noto anche come Sostegno di base al reddito per la sostenibilità, che fornisce agli agricoltori una base di reddito stabile indipendentemente dalle fluttuazioni del mercato.</div>
@@ -854,7 +954,7 @@ footer strong { color:var(--gold); }
 
     <div class="pcard reveal" data-t="cap">
       <div class="pcard-top">
-        <span class="pcard-num">39</span>
+        <span class="pcard-num">52</span>
         <div class="pcard-en"><mark>The current CAP reform, which came into force in 2023, introduces the concept of eco-schemes,</mark> which reward farmers who go beyond baseline environmental requirements — for example, by adopting organic practices, reducing pesticide use, or improving animal welfare.</div>
       </div>
       <div class="pcard-it">La riforma PAC attuale, entrata in vigore nel 2023, introduce il concetto di eco-regimi, che premiano gli agricoltori che vanno oltre i requisiti ambientali di base — ad esempio adottando pratiche biologiche, riducendo l'uso di pesticidi o migliorando il benessere animale.</div>
@@ -863,7 +963,7 @@ footer strong { color:var(--gold); }
 
     <div class="pcard reveal" data-t="cap">
       <div class="pcard-top">
-        <span class="pcard-num">40</span>
+        <span class="pcard-num">53</span>
         <div class="pcard-en"><mark>The CAP is structured around two pillars:</mark> Pillar I provides direct payments and market support, while Pillar II funds rural development programmes, including investment in farm modernisation, agri-environment measures, and support for young farmers.</div>
       </div>
       <div class="pcard-it">La PAC è strutturata attorno a due pilastri: il Primo Pilastro fornisce pagamenti diretti e sostegno al mercato, mentre il Secondo Pilastro finanzia programmi di sviluppo rurale, tra cui investimenti nella modernizzazione delle aziende, misure agro-ambientali e supporto ai giovani agricoltori.</div>
@@ -872,7 +972,7 @@ footer strong { color:var(--gold); }
 
     <div class="pcard reveal" data-t="cap">
       <div class="pcard-top">
-        <span class="pcard-num">41</span>
+        <span class="pcard-num">54</span>
         <div class="pcard-en"><mark>Critics of the CAP argue that</mark> historically the policy has favoured large-scale industrial farms over small family enterprises, and that future reforms must rebalance support toward more sustainable, climate-friendly, and welfare-oriented models of farming.</div>
       </div>
       <div class="pcard-it">I critici della PAC sostengono che storicamente la politica ha favorito le grandi aziende industriali rispetto alle piccole imprese familiari, e che le riforme future devono riequilibrare il sostegno verso modelli agricoli più sostenibili, rispettosi del clima e orientati al benessere.</div>
@@ -881,7 +981,7 @@ footer strong { color:var(--gold); }
 
 
     <div class="pcard reveal" data-t="cap">
-      <div class="pcard-top"><span class="pcard-num">42</span>
+      <div class="pcard-top"><span class="pcard-num">55</span>
         <div class="pcard-en"><mark>Conditionality is a fundamental principle of the CAP, meaning that</mark> farmers can only receive direct payments if they comply with a set of basic standards relating to the environment, animal welfare, and food safety.</div>
       </div>
       <div class="pcard-it">La condizionalità è un principio fondamentale della PAC, il che significa che gli agricoltori possono ricevere pagamenti diretti solo se rispettano una serie di standard di base relativi all'ambiente, al benessere animale e alla sicurezza alimentare.</div>
@@ -889,7 +989,7 @@ footer strong { color:var(--gold); }
     </div>
 
     <div class="pcard reveal" data-t="cap">
-      <div class="pcard-top"><span class="pcard-num">43</span>
+      <div class="pcard-top"><span class="pcard-num">56</span>
         <div class="pcard-en"><mark>One of the main objectives of rural development policy under CAP Pillar II is</mark> to support young farmers entering the profession, recognising that the average age of European farmers is over 55 and generational renewal is a pressing challenge.</div>
       </div>
       <div class="pcard-it">Uno degli obiettivi principali della politica di sviluppo rurale nel quadro del Secondo Pilastro della PAC è sostenere i giovani agricoltori che entrano nella professione, riconoscendo che l'età media degli agricoltori europei è superiore ai 55 anni e il ricambio generazionale è una sfida urgente.</div>
@@ -897,7 +997,7 @@ footer strong { color:var(--gold); }
     </div>
 
     <div class="pcard reveal" data-t="cap">
-      <div class="pcard-top"><span class="pcard-num">44</span>
+      <div class="pcard-top"><span class="pcard-num">57</span>
         <div class="pcard-en"><mark>The CAP accounts for approximately 30% of the EU's total budget,</mark> reflecting the strategic importance of agriculture for food security, rural employment, and environmental management across Europe.</div>
       </div>
       <div class="pcard-it">La PAC rappresenta circa il 30% del bilancio totale dell'UE, riflettendo l'importanza strategica dell'agricoltura per la sicurezza alimentare, l'occupazione rurale e la gestione ambientale in tutta Europa.</div>
@@ -905,7 +1005,7 @@ footer strong { color:var(--gold); }
     </div>
 
     <div class="pcard reveal" data-t="cap">
-      <div class="pcard-top"><span class="pcard-num">45</span>
+      <div class="pcard-top"><span class="pcard-num">58</span>
         <div class="pcard-en"><mark>The CAP and the EU Green Deal are closely connected:</mark> the Farm to Fork Strategy aims to reduce the use of pesticides by 50%, increase organic farming to 25% of agricultural land, and cut fertiliser use by 20% — all by 2030.</div>
       </div>
       <div class="pcard-it">La PAC e il Green Deal europeo sono strettamente collegati: la strategia Farm to Fork mira a ridurre l'uso di pesticidi del 50%, aumentare l'agricoltura biologica al 25% della superficie agricola e ridurre l'uso di fertilizzanti del 20% — tutto entro il 2030.</div>
@@ -913,7 +1013,7 @@ footer strong { color:var(--gold); }
     </div>
 
     <div class="pcard reveal" data-t="cap">
-      <div class="pcard-top"><span class="pcard-num">46</span>
+      <div class="pcard-top"><span class="pcard-num">59</span>
         <div class="pcard-en"><mark>Short supply chains and local food systems are supported by the CAP</mark> as a way to reduce food miles, strengthen connections between producers and consumers, and preserve local agricultural traditions and rural economies.</div>
       </div>
       <div class="pcard-it">Le filiere corte e i sistemi alimentari locali sono sostenuti dalla PAC come modo per ridurre i food miles, rafforzare i legami tra produttori e consumatori e preservare le tradizioni agricole locali e le economie rurali.</div>
@@ -921,119 +1021,14 @@ footer strong { color:var(--gold); }
     </div>
 
     <div class="pcard reveal" data-t="cap">
-      <div class="pcard-top"><span class="pcard-num">47</span>
+      <div class="pcard-top"><span class="pcard-num">60</span>
         <div class="pcard-en"><mark>Agricultural advisory services, funded under CAP Pillar II, help farmers</mark> adopt new technologies, comply with regulations, and improve the economic and environmental performance of their holdings — a crucial support especially for smaller enterprises.</div>
       </div>
       <div class="pcard-it">I servizi di consulenza agricola, finanziati dal Secondo Pilastro della PAC, aiutano gli agricoltori ad adottare nuove tecnologie, rispettare le normative e migliorare le prestazioni economiche e ambientali delle loro aziende — un supporto cruciale soprattutto per le imprese più piccole.</div>
       <div class="pcard-footer"><span class="pcard-tag">CAP · Advisory Services</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
     </div>
 
-    
-    <div class="pcard reveal" data-t="hist">
-      <div class="pcard-top"><span class="pcard-num">48</span>
-        <div class="pcard-en"><mark>For most of human prehistory, during the Paleolithic period,</mark> people were nomadic hunter-gatherers who lived in small clans, moving constantly in search of food and using primitive tools made from bone, wood, and stone.</div>
-      </div>
-      <div class="pcard-it">Per la maggior parte della preistoria umana, durante il Paleolitico, le persone erano cacciatori-raccoglitori nomadi che vivevano in piccoli clan, spostandosi continuamente in cerca di cibo e usando strumenti primitivi di osso, legno e pietra.</div>
-      <div class="pcard-footer"><span class="pcard-tag">History · Paleolithic</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
-    </div>
-
-    <div class="pcard reveal" data-t="hist">
-      <div class="pcard-top"><span class="pcard-num">49</span>
-        <div class="pcard-en"><mark>The Neolithic Revolution, which took place between 10,000 and 8,000 years ago, marks</mark> one of the most transformative turning points in human history: people moved from a nomadic lifestyle to settled agricultural communities, learning to plant seeds and domesticate animals.</div>
-      </div>
-      <div class="pcard-it">La Rivoluzione Neolitica, avvenuta tra 10.000 e 8.000 anni fa, segna uno dei punti di svolta più trasformativi nella storia umana: le persone passarono da uno stile di vita nomade a comunità agricole sedentarie, imparando a piantare semi e addomesticare animali.</div>
-      <div class="pcard-footer"><span class="pcard-tag">History · Neolithic Revolution</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
-    </div>
-
-    <div class="pcard reveal" data-t="hist">
-      <div class="pcard-top"><span class="pcard-num">50</span>
-        <div class="pcard-en"><mark>Agriculture is believed to have first emerged in the Fertile Crescent,</mark> the region of the eastern Mediterranean stretching from modern-day Turkey through Syria, Lebanon, and into Mesopotamia — where early farmers cultivated wheat, barley, oats, and millet.</div>
-      </div>
-      <div class="pcard-it">Si ritiene che l'agricoltura sia emersa per la prima volta nella Mezzaluna Fertile, la regione del Mediterraneo orientale che si estende dalla moderna Turchia attraverso Siria, Libano e Mesopotamia — dove i primi agricoltori coltivavano grano, orzo, avena e miglio.</div>
-      <div class="pcard-footer"><span class="pcard-tag">History · Fertile Crescent</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
-    </div>
-
-    <div class="pcard reveal" data-t="hist">
-      <div class="pcard-top"><span class="pcard-num">51</span>
-        <div class="pcard-en"><mark>During the Roman period, agriculture reached a peak of productivity,</mark> with pioneering techniques in crop storage, field irrigation, and the systematic use of manure as fertiliser — many of which would not be significantly improved upon until the Renaissance.</div>
-      </div>
-      <div class="pcard-it">Durante il periodo romano, l'agricoltura raggiunse un picco di produttività, con tecniche pionieristiche per la conservazione dei raccolti, l'irrigazione dei campi e l'uso sistematico del letame come fertilizzante — molte delle quali non sarebbero state significativamente migliorate fino al Rinascimento.</div>
-      <div class="pcard-footer"><span class="pcard-tag">History · Roman Period</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
-    </div>
-
-    <div class="pcard reveal" data-t="hist">
-      <div class="pcard-top"><span class="pcard-num">52</span>
-        <div class="pcard-en"><mark>The Columbian Exchange, following Columbus's arrival in America in 1492,</mark> had a profound impact on world agriculture: new crops such as maize, potatoes, tomatoes, and tobacco were introduced to Europe, completely transforming diets and farming systems on both continents.</div>
-      </div>
-      <div class="pcard-it">Lo Scambio Colombiano, seguito all'arrivo di Colombo in America nel 1492, ebbe un profondo impatto sull'agricoltura mondiale: nuove colture come mais, patate, pomodori e tabacco furono introdotte in Europa, trasformando completamente l'alimentazione e i sistemi agricoli su entrambi i continenti.</div>
-      <div class="pcard-footer"><span class="pcard-tag">History · Columbian Exchange</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
-    </div>
-
-    <div class="pcard reveal" data-t="hist">
-      <div class="pcard-top"><span class="pcard-num">53</span>
-        <div class="pcard-en"><mark>The Agricultural Revolution of the 18th century introduced key innovations such as</mark> Jethro Tull's seed drill, crop rotation systems, and selective livestock breeding — dramatically increasing yields and reducing the labour force needed to feed a growing population.</div>
-      </div>
-      <div class="pcard-it">La Rivoluzione Agricola del XVIII secolo introdusse innovazioni chiave come la seminatrice di Jethro Tull, i sistemi di rotazione delle colture e la selezione del bestiame — aumentando drammaticamente le rese e riducendo la forza lavoro necessaria per nutrire una popolazione in crescita.</div>
-      <div class="pcard-footer"><span class="pcard-tag">History · Agricultural Revolution</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
-    </div>
-
-    <div class="pcard reveal" data-t="hist">
-      <div class="pcard-top"><span class="pcard-num">54</span>
-        <div class="pcard-en"><mark>Conventional farming, which dominated the 20th century, is characterised by</mark> large-scale monocultures, heavy use of synthetic fertilisers and pesticides, mechanisation, and high capital investment — systems designed to maximise yield at the expense of biodiversity and soil health.</div>
-      </div>
-      <div class="pcard-it">L'agricoltura convenzionale, che ha dominato il XX secolo, è caratterizzata da monocolture su larga scala, uso massiccio di fertilizzanti sintetici e pesticidi, meccanizzazione e alti investimenti di capitale — sistemi progettati per massimizzare le rese a scapito della biodiversità e della salute del suolo.</div>
-      <div class="pcard-footer"><span class="pcard-tag">History · Conventional Farming</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
-    </div>
-
-    <div class="pcard reveal" data-t="hist">
-      <div class="pcard-top"><span class="pcard-num">55</span>
-        <div class="pcard-en"><mark>The negative effects of conventional farming include</mark> soil compaction caused by heavy machinery, groundwater pollution from excessive fertiliser use, loss of biodiversity, and the development of antibiotic-resistant bacteria due to the routine treatment of livestock.</div>
-      </div>
-      <div class="pcard-it">Gli effetti negativi dell'agricoltura convenzionale includono la compattazione del suolo causata dai macchinari pesanti, l'inquinamento delle acque sotterranee dovuto all'uso eccessivo di fertilizzanti, la perdita di biodiversità e lo sviluppo di batteri resistenti agli antibiotici a causa del trattamento routinario del bestiame.</div>
-      <div class="pcard-footer"><span class="pcard-tag">History · Conventional Drawbacks</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
-    </div>
-
-    <div class="pcard reveal" data-t="hist">
-      <div class="pcard-top"><span class="pcard-num">56</span>
-        <div class="pcard-en"><mark>The organic movement emerged in the 1930s and 1940s as a reaction to</mark> agriculture's growing dependence on synthetic chemicals, and was formalised globally by the founding of IFOAM — the International Federation of Organic Agriculture Movements — in 1972.</div>
-      </div>
-      <div class="pcard-it">Il movimento biologico è emerso negli anni '30 e '40 come reazione alla crescente dipendenza dell'agricoltura dai prodotti chimici sintetici, ed è stato formalizzato a livello globale con la fondazione dell'IFOAM — la Federazione Internazionale dei Movimenti per l'Agricoltura Biologica — nel 1972.</div>
-      <div class="pcard-footer"><span class="pcard-tag">History · Organic Origins</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
-    </div>
-
-    <div class="pcard reveal" data-t="hist">
-      <div class="pcard-top"><span class="pcard-num">57</span>
-        <div class="pcard-en"><mark>Biodynamic farming, introduced by Rudolf Steiner in the 1920s, goes beyond organic principles by</mark> treating the farm as a self-sustaining ecosystem, using fermented herbal preparations, composting, and taking into account the influence of cosmic and lunar cycles on plant growth.</div>
-      </div>
-      <div class="pcard-it">L'agricoltura biodinamica, introdotta da Rudolf Steiner negli anni '20, va oltre i principi biologici trattando l'azienda come un ecosistema autosufficiente, usando preparati erboristici fermentati, compostaggio e tenendo conto dell'influenza dei cicli cosmici e lunari sulla crescita delle piante.</div>
-      <div class="pcard-footer"><span class="pcard-tag">History · Biodynamic</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
-    </div>
-
-    <div class="pcard reveal" data-t="hist">
-      <div class="pcard-top"><span class="pcard-num">58</span>
-        <div class="pcard-en"><mark>Hydroponics is a soil-less growing method in which</mark> plants receive nutrients directly through water-based solutions, allowing them to grow up to 50% faster than in traditional soil and enabling food production in environments where conventional farming is impossible.</div>
-      </div>
-      <div class="pcard-it">L'idroponica è un metodo di coltivazione senza suolo in cui le piante ricevono i nutrienti direttamente attraverso soluzioni a base d'acqua, permettendo loro di crescere fino al 50% più velocemente che nel suolo tradizionale e consentendo la produzione alimentare in ambienti dove l'agricoltura convenzionale è impossibile.</div>
-      <div class="pcard-footer"><span class="pcard-tag">History · Hydroponics</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
-    </div>
-
-    <div class="pcard reveal" data-t="hist">
-      <div class="pcard-top"><span class="pcard-num">59</span>
-        <div class="pcard-en"><mark>Aeroponics differs from hydroponics in that</mark> plant roots are suspended in air and periodically misted with a nutrient-rich solution — requiring even less water than hydroponic systems while achieving high yields in minimal space, making it particularly suited to urban and vertical farming.</div>
-      </div>
-      <div class="pcard-it">L'aeroponica si differenzia dall'idroponica in quanto le radici delle piante sono sospese nell'aria e periodicamente nebulizzate con una soluzione ricca di nutrienti — richiedendo ancora meno acqua dei sistemi idroponici pur raggiungendo alte rese in spazi minimi, rendendola particolarmente adatta all'agricoltura urbana e verticale.</div>
-      <div class="pcard-footer"><span class="pcard-tag">History · Aeroponics</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
-    </div>
-
-    <div class="pcard reveal" data-t="hist">
-      <div class="pcard-top"><span class="pcard-num">60</span>
-        <div class="pcard-en"><mark>If we trace the entire history of farming,</mark> we can observe a clear arc: from the first seeds planted in the Fertile Crescent, through Roman ingenuity, Renaissance improvements, and the Industrial Revolution, to the present-day challenge of feeding 8 billion people sustainably.</div>
-      </div>
-      <div class="pcard-it">Se tracciamo l'intera storia dell'agricoltura, possiamo osservare un arco chiaro: dai primi semi piantati nella Mezzaluna Fertile, attraverso l'ingegnosità romana, i miglioramenti rinascimentali e la Rivoluzione Industriale, fino alla sfida attuale di nutrire 8 miliardi di persone in modo sostenibile.</div>
-      <div class="pcard-footer"><span class="pcard-tag">History · Overview / Conclude</span><button class="copy-btn" onclick="copyPhrase(this)">copy</button></div>
-    </div>
-
-    <!-- ══ GENERAL ORAL ══ -->
+    <!-- ══ GENERAL ORAL EXAM══ -->
     <div class="pcard reveal" data-t="gen">
       <div class="pcard-top">
         <span class="pcard-num">61</span>
